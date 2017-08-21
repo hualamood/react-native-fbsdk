@@ -41,7 +41,6 @@ public class FBSDKPackage implements ReactPackage {
         mCallbackManager = callbackManager;
     }
 
-    @Override
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         InternalSettings.setCustomUserAgent(VERSION_TO_RELEASE);
@@ -57,8 +56,6 @@ public class FBSDKPackage implements ReactPackage {
                 new FBShareDialogModule(reactContext, mCallbackManager)
         );
     }
-
-    @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
                 new FBLikeViewManager(),
